@@ -1,0 +1,51 @@
+/* ==================================
+        ETIQUETAS DE PRODUCTO
+=================================== */
+
+.card-producto {
+    position: relative;
+    overflow: hidden; /* Asegura que la etiqueta no sobresalga si hay efectos de escala */
+}
+
+.etiqueta {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    
+    /* Diseño moderno: Padding más estilizado y tipografía limpia */
+    padding: 6px 14px;
+    border-radius: 30px;
+    
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    
+    z-index: 10;
+    
+    /* Efecto Glass / Translúcido con sombra difuminada y borde sutil */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    
+    /* Animación fluida por si cambian de estado */
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto hover opcional: sutil elevación en la etiqueta cuando pasan el cursor por la tarjeta */
+.card-producto:hover .etiqueta {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* Variantes con paletas de colores más vibrantes y armónicas */
+.nuevo {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.oferta {
+    background: linear-gradient(135deg, #ff5252, #e53935);
+}

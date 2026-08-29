@@ -1,0 +1,363 @@
+/* ==========================================
+   VARIABLES DE COLOR Y DISEÑO
+========================================== */
+:root {
+    --bg-main: #0a0a0c;
+    --bg-card: #141418;
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    /* Colores principales solicitados */
+    --color-rojo: #E53935;
+    --color-rojo-glow: rgba(229, 57, 53, 0.25);
+    
+    --color-verde: #2ECC71;
+    --color-verde-glow: rgba(46, 204, 113, 0.25);
+    
+    --color-azul: #3498DB;
+    --color-azul-glow: rgba(52, 152, 219, 0.25);
+    
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+}
+
+/* ==========================================
+   PÁGINA DETALLE PRODUCTO
+========================================== */
+
+.producto-detalle {
+    width: 100%;
+    min-height: 85vh;
+    padding: 80px 20px 100px;
+    background: 
+        radial-gradient(circle at 10% 15%, var(--color-rojo-glow) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, var(--color-azul-glow) 0%, transparent 40%),
+        var(--bg-main);
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL (GRID)
+========================================== */
+
+.producto-contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* ==========================================
+   GALERÍA Y IMAGEN PRINCIPAL
+========================================== */
+
+.producto-galeria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 480px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.producto-imagen:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   MINIATURAS
+========================================== */
+
+.miniaturas {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.miniatura {
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.miniatura:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-azul);
+    box-shadow: 0 5px 15px var(--color-azul-glow);
+}
+
+.miniatura.activa {
+    border-color: var(--color-rojo);
+    box-shadow: 0 0 12px var(--color-rojo-glow);
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   INFORMACIÓN DEL PRODUCTO
+========================================== */
+
+.producto-info {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   CATEGORÍA (Toque Azul)
+========================================== */
+
+.producto-categoria {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+    background: rgba(52, 152, 219, 0.12);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    color: var(--color-azul);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+/* ==========================================
+   NOMBRE
+========================================== */
+
+.producto-info h1 {
+    margin: 0 0 16px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================
+   PRECIO (Toque Rojo)
+========================================== */
+
+.producto-precio {
+    color: var(--color-rojo);
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px var(--color-rojo-glow);
+}
+
+/* ==========================================
+   STOCK (Toque Verde y Rojo)
+========================================== */
+
+.producto-stock {
+    margin-bottom: 16px;
+}
+
+.stock-disponible,
+.stock-agotado {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.stock-disponible {
+    background: rgba(46, 204, 113, 0.12);
+    color: var(--color-verde);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    box-shadow: 0 0 10px var(--color-verde-glow);
+}
+
+.stock-disponible::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--color-verde);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--color-verde);
+}
+
+.stock-agotado {
+    background: rgba(229, 57, 53, 0.12);
+    color: var(--color-rojo);
+    border: 1px solid rgba(229, 57, 53, 0.3);
+}
+
+/* ==========================================
+   ESTADO ADICIONAL
+========================================== */
+
+.producto-estado {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   BOTONES DE ACCIÓN (WhatsApp + Volver)
+========================================== */
+
+.btn-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 380px;
+    padding: 16px 24px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #25D366, #20ba5a);
+    color: white;
+    text-decoration: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-comprar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.btn-volver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    border-color: var(--color-azul);
+    background: rgba(52, 152, 219, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--color-azul-glow);
+}
+
+/* ==========================================
+   ESTADOS DE CARGA Y ERROR
+========================================== */
+
+.producto-loading,
+.producto-error {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-main);
+    color: var(--text-main);
+    text-align: center;
+    padding: 40px;
+}
+
+.producto-loading h2,
+.producto-error p {
+    color: var(--text-muted);
+}
+
+.producto-error h2 {
+    font-size: 2rem;
+    color: var(--color-rojo);
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (TABLET Y MÓVIL)
+========================================== */
+
+@media (max-width: 900px) {
+    .producto-contenedor {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 600px;
+    }
+
+    .producto-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .producto-categoria {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .miniaturas {
+        justify-content: center;
+    }
+
+    .btn-comprar,
+    .btn-volver {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .producto-detalle {
+        padding: 50px 15px 70px;
+    }
+
+    .producto-imagen {
+        height: 360px;
+        border-radius: 16px;
+    }
+
+    .miniatura {
+        width: 60px;
+        height: 60px;
+    }
+
+    .producto-precio {
+        font-size: 30px;
+    }
+}

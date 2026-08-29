@@ -1,0 +1,702 @@
+/* ==========================================
+   PANEL PRINCIPAL ADMIN
+========================================== */
+
+.admin-panel {
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 50px 30px;
+
+    background: #0f0f0f;
+
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.admin-header {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+.admin-header h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+.admin-header p {
+
+    color: #aaa;
+
+    font-size: 17px;
+
+}
+
+
+/* ==========================================
+   MENÚ ADMIN
+========================================== */
+
+.admin-menu {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.admin-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    min-height: 230px;
+
+    padding: 30px;
+
+    background: #1b1b1b;
+
+    border: 1px solid #333;
+
+    border-radius: 15px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+.admin-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #ff3b3b;
+
+    box-shadow:
+        0 10px 30px rgba(255,59,59,.20);
+
+}
+
+
+/* ==========================================
+   ICONOS
+========================================== */
+
+.admin-card-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.admin-card h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.admin-card p {
+
+    color: #aaa;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   VOLVER
+========================================== */
+
+.admin-volver {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+}
+
+
+.btn-volver {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    border: 1px solid #444;
+
+    transition: .3s;
+
+}
+
+
+.btn-volver:hover {
+
+    background: #ff3b3b;
+
+    border-color: #ff3b3b;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .admin-panel {
+
+        padding: 35px 20px;
+
+    }
+
+
+    .admin-header h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .admin-menu {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .admin-card {
+
+        min-height: 180px;
+
+    }
+
+}
+/* ==========================================
+   FORMULARIO DE PRODUCTOS
+========================================== */
+
+.form-admin {
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 30px auto 50px;
+
+    padding: 30px;
+
+    background: #1a1a1a;
+
+    border: 1px solid #333;
+
+    border-radius: 15px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+/* INPUTS */
+
+.form-admin input,
+.form-admin select,
+.form-admin textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #111;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+/* EFECTO AL SELECCIONAR */
+
+.form-admin input:focus,
+.form-admin select:focus,
+.form-admin textarea:focus {
+
+    border-color: #ff3b3b;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.form-admin textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+
+}
+
+
+/* IMAGEN */
+
+.contenedor-imagen {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+/* PREVIEW */
+
+.preview-imagen {
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    background: #111;
+
+    border: 1px solid #444;
+
+    border-radius: 10px;
+
+    padding: 5px;
+
+}
+
+
+/* BOTÓN GUARDAR */
+
+.form-admin button {
+
+    grid-column: 1 / -1;
+
+    padding: 14px 25px;
+
+    background: #e53935;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.form-admin button:hover {
+
+    background: #c62828;
+
+}
+
+
+/* BOTÓN CANCELAR */
+
+.form-admin button[type="button"] {
+
+    background: #333;
+
+}
+
+
+.form-admin button[type="button"]:hover {
+
+    background: #555;
+
+}
+
+
+/* ==========================================
+   TABLA DE PRODUCTOS
+========================================== */
+
+.tabla-productos {
+
+    width: 100%;
+
+    max-width: 1300px;
+
+    margin: 0 auto 50px;
+
+    padding: 30px;
+
+    background: #1a1a1a;
+
+    border: 1px solid #333;
+
+    border-radius: 15px;
+
+    overflow-x: auto;
+
+}
+
+
+.tabla-productos h2 {
+
+    margin-bottom: 25px;
+
+    font-size: 28px;
+
+}
+
+
+/* TABLA */
+
+.tabla-productos table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+
+}
+
+
+/* ENCABEZADOS */
+
+.tabla-productos th {
+
+    background: #222;
+
+    color: white;
+
+    padding: 15px 12px;
+
+    text-align: left;
+
+    border-bottom: 2px solid #ff3b3b;
+
+}
+
+
+/* CELDAS */
+
+.tabla-productos td {
+
+    padding: 12px;
+
+    border-bottom: 1px solid #333;
+
+    vertical-align: middle;
+
+}
+
+
+/* FILA */
+
+.tabla-productos tbody tr:hover {
+
+    background: #222;
+
+}
+
+
+/* IMÁGENES */
+
+.tabla-productos img {
+
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: contain;
+
+    background: #111;
+
+    border-radius: 8px;
+
+    padding: 4px;
+
+}
+
+
+/* ==========================================
+   BOTONES TABLA
+========================================== */
+
+.btn-editar,
+.btn-eliminar {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+
+.btn-editar {
+
+    background: #f0a500;
+
+}
+
+
+.btn-eliminar {
+
+    background: #e53935;
+
+}
+
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* ==========================================
+   ADMIN PRODUCTOS
+========================================== */
+
+.admin {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 35px 20px;
+
+    background: #0f0f0f;
+
+    color: white;
+
+}
+
+
+.admin > h1 {
+
+    max-width: 1300px;
+
+    margin: 0 auto 25px;
+
+    font-size: 38px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .admin {
+
+        padding: 25px 12px;
+
+    }
+
+
+    .admin > h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .form-admin {
+
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+
+    }
+
+
+    .tabla-productos {
+
+        padding: 15px;
+
+    }
+
+
+    .tabla-productos h2 {
+
+        font-size: 23px;
+
+    }
+
+}
+/* ==========================================
+   FOTOS ADICIONALES
+========================================== */
+
+.contenedor-imagenes-adicionales {
+    margin-top: 25px;
+    padding: 20px;
+    background: #111;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.contenedor-imagenes-adicionales h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contenedor-imagenes-adicionales p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   GALERÍA DE PREVISUALIZACIÓN
+========================================== */
+
+.preview-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   CADA FOTO
+========================================== */
+
+.preview-item {
+    width: 120px;
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.preview-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 7px;
+    display: block;
+}
+
+
+.preview-item span {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 6px;
+}
+/* ==========================================
+   BOTÓN CERRAR SESIÓN
+========================================== */
+
+.btn-cerrar-sesion {
+
+  background: #ff3b3b;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+
+  transition: 0.3s;
+
+}
+
+
+.btn-cerrar-sesion:hover {
+
+  background: #d92626;
+
+  transform: scale(1.04);
+
+}

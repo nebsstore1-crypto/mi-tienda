@@ -1,0 +1,485 @@
+/* ==========================================
+   CONTENEDOR GENERAL
+========================================== */
+
+.slider-productos {
+
+    width: 100%;
+
+    max-width: 1350px;
+
+    margin: 70px auto;
+
+    padding: 0 25px;
+
+}
+
+
+/* ==========================================
+   TITULO
+========================================== */
+
+.slider-productos h2 {
+
+    color: white;
+
+    text-align: center;
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    font-weight: 800;
+
+    margin-bottom: 35px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.slider-productos h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    margin: 14px auto 0;
+
+    background: #E53935;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.contenedor-tarjetas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+    justify-content: center;
+
+}
+
+
+/* ==========================================
+   TARJETA PRODUCTO
+========================================== */
+
+.tarjeta-producto {
+
+    position: relative;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #222,
+            #151515
+        );
+
+    border: 1px solid #2d2d2d;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+/* ==========================================
+   EFECTO AL PASAR MOUSE
+========================================== */
+
+.tarjeta-producto:hover {
+
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(229, 57, 53, .6);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .5),
+        0 0 25px rgba(229, 57, 53, .15);
+
+}
+
+
+/* ==========================================
+   ETIQUETA
+========================================== */
+
+.etiqueta {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    z-index: 5;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: #E53935;
+
+}
+
+
+.etiqueta.oferta {
+
+    background: #E53935;
+
+}
+
+
+.etiqueta.nuevo {
+
+    background: #1976d2;
+
+}
+
+
+/* ==========================================
+   IMAGEN
+========================================== */
+
+.imagen-producto {
+
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+.imagen-producto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.tarjeta-producto:hover
+.imagen-producto img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* ==========================================
+   INFORMACIÓN
+========================================== */
+
+.info-producto {
+
+    padding: 22px 18px 20px;
+
+    text-align: center;
+
+}
+
+
+.info-producto h3 {
+
+    color: white;
+
+    margin: 0 0 8px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+}
+
+
+.info-producto .categoria {
+
+    color: #999;
+
+    margin: 0 0 12px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   PRECIO
+========================================== */
+
+.info-producto .precio {
+
+    color: #E53935;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    margin: 10px 0 20px;
+
+}
+
+
+/* ==========================================
+   BOTÓN
+========================================== */
+
+.btn-producto {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 13px 20px;
+
+    background: #E53935;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.btn-producto:hover {
+
+    background: #c62828;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 57, 53, .3);
+
+}
+
+
+/* ==========================================
+   BOTÓN CATEGORÍA
+========================================== */
+
+.btn-categoria {
+
+    display: block;
+
+    width: 230px;
+
+    margin: 45px auto 0;
+
+    padding: 14px 20px;
+
+    text-align: center;
+
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid #E53935;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.btn-categoria:hover {
+
+    background: #E53935;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 57, 53, .25);
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .slider-productos {
+
+        margin: 55px auto;
+
+        padding: 0 20px;
+
+    }
+
+
+    .contenedor-tarjetas {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 22px;
+
+    }
+
+
+    .imagen-producto {
+
+        height: 250px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+    .slider-productos {
+
+        margin: 45px auto;
+
+        padding: 0 15px;
+
+    }
+
+
+    .slider-productos h2 {
+
+        font-size: 30px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .contenedor-tarjetas {
+
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+
+        margin: auto;
+
+        gap: 22px;
+
+    }
+
+
+    .imagen-producto {
+
+        height: 280px;
+
+    }
+
+
+    .info-producto h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .info-producto .precio {
+
+        font-size: 22px;
+
+    }
+
+
+    .btn-categoria {
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR PEQUEÑO
+========================================== */
+
+@media (max-width: 380px) {
+
+    .slider-productos {
+
+        padding: 0 10px;
+
+    }
+
+
+    .imagen-producto {
+
+        height: 240px;
+
+    }
+
+}

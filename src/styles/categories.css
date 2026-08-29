@@ -1,0 +1,458 @@
+/* ==========================================
+   CATEGORÍAS
+========================================== */
+
+.categories {
+
+    width: 100%;
+
+    padding: 90px 25px 100px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(229, 57, 53, .10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(229, 57, 53, .08),
+            transparent 35%
+        ),
+        #0f0f0f;
+
+    color: white;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+.categories h2 {
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    font-weight: 800;
+
+    margin: 0 0 15px;
+
+    letter-spacing: -1px;
+
+}
+
+
+/* Línea decorativa */
+
+.categories h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    margin: 15px auto 50px;
+
+    background: #E53935;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.cards {
+
+    width: 100%;
+
+    max-width: 1350px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+}
+
+
+/* ==========================================
+   TARJETA
+========================================== */
+
+.card {
+
+    position: relative;
+
+    min-height: 340px;
+
+    padding: 35px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #222,
+            #151515
+        );
+
+    border: 1px solid #2d2d2d;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+/* ==========================================
+   EFECTO DECORATIVO
+========================================== */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -90px;
+
+    right: -90px;
+
+    background: rgba(229, 57, 53, .12);
+
+    border-radius: 50%;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.card:hover::before {
+
+    transform: scale(1.5);
+
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(229, 57, 53, .65);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .55),
+        0 0 30px rgba(229, 57, 53, .18);
+
+}
+
+
+/* ==========================================
+   ICONO
+========================================== */
+
+.icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 95px;
+
+    height: 95px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2a2a2a,
+            #111
+        );
+
+    border: 1px solid #3a3a3a;
+
+    font-size: 52px;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.card:hover .icon {
+
+    transform:
+        scale(1.08)
+        rotate(-3deg);
+
+    border-color: #E53935;
+
+    box-shadow:
+        0 0 25px rgba(229, 57, 53, .25);
+
+}
+
+
+/* ==========================================
+   NOMBRE
+========================================== */
+
+.card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    margin: 0 0 12px;
+
+}
+
+
+/* ==========================================
+   DESCRIPCIÓN
+========================================== */
+
+.card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 300px;
+
+    color: #aaa;
+
+    line-height: 1.6;
+
+    margin: 0 0 25px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   BOTÓN
+========================================== */
+
+.card a {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 13px 22px;
+
+    background: #E53935;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.card a:hover {
+
+    background: #c62828;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 57, 53, .35);
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .categories {
+
+        padding: 70px 20px 80px;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 22px;
+
+    }
+
+
+    .card {
+
+        min-height: 320px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+    .categories {
+
+        padding: 55px 15px 65px;
+
+    }
+
+
+    .categories h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .categories h2::after {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+        max-width: 420px;
+
+        gap: 22px;
+
+    }
+
+
+    .card {
+
+        min-height: 300px;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .icon {
+
+        width: 85px;
+
+        height: 85px;
+
+        font-size: 45px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 25px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR PEQUEÑO
+========================================== */
+
+@media (max-width: 380px) {
+
+    .categories {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+    }
+
+
+    .card {
+
+        min-height: 280px;
+
+    }
+
+}

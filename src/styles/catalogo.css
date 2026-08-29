@@ -1,0 +1,112 @@
+/* ===========================
+   CATÁLOGO
+=========================== */
+
+.catalogo {
+    width: 90%;
+    max-width: 1280px;
+    margin: 60px auto;
+}
+
+.catalogo h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===========================
+   TARJETAS
+=========================== */
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+.info p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1; /* Empuja el precio y botón hacia abajo si las descripciones varían */
+}
+
+.info h2 {
+    color: #D32F2F;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.info button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #E53935;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.25);
+}
+
+.info button:hover {
+    background: #C62828;
+    box-shadow: 0 6px 16px rgba(198, 40, 40, 0.35);
+}
+
+.info button:active {
+    transform: scale(0.98);
+}

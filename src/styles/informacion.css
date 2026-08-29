@@ -1,0 +1,537 @@
+/* ==========================================
+   PÁGINA INFORMACIÓN
+========================================== */
+
+.informacion {
+
+  width: 100%;
+
+  min-height: calc(100vh - 80px);
+
+  background: #0d0d0d;
+
+  color: white;
+
+  padding: 60px 25px;
+
+  box-sizing: border-box;
+
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.informacion-header {
+
+  max-width: 850px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+
+}
+
+
+.informacion-header h1 {
+
+  margin: 0 0 15px;
+
+  font-size: 42px;
+
+}
+
+
+.informacion-header p {
+
+  margin: 0;
+
+  color: #aaa;
+
+  font-size: 18px;
+
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.informacion-tarjetas {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+}
+
+
+.informacion-card {
+
+  background: #171717;
+
+  border: 1px solid #2d2d2d;
+
+  border-radius: 15px;
+
+  padding: 30px 22px;
+
+  text-align: center;
+
+  transition: 0.3s;
+
+}
+
+
+.informacion-card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #ff3b3b;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* ==========================================
+   ICONOS
+========================================== */
+
+.informacion-icono {
+
+  width: 60px;
+
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #222;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+}
+
+
+/* ==========================================
+   TITULOS TARJETAS
+========================================== */
+
+.informacion-card h2 {
+
+  margin: 0 0 12px;
+
+  font-size: 21px;
+
+}
+
+
+.informacion-card p {
+
+  margin: 0;
+
+  color: #aaa;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+
+}
+
+
+/* ==========================================
+   PREGUNTAS FRECUENTES
+========================================== */
+
+.preguntas-frecuentes {
+
+  max-width: 900px;
+
+  margin: 70px auto 0;
+
+}
+
+
+.preguntas-frecuentes h2 {
+
+  text-align: center;
+
+  font-size: 30px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.preguntas-subtitulo {
+
+  text-align: center;
+
+  color: #999;
+
+  margin-bottom: 30px;
+
+}
+
+
+/* ==========================================
+   LISTA PREGUNTAS
+========================================== */
+
+.preguntas-lista {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+.pregunta {
+
+  background: #171717;
+
+  border: 1px solid #2d2d2d;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+}
+
+
+.pregunta.pregunta-abierta {
+
+  border-color: #ff3b3b;
+
+}
+
+
+/* ==========================================
+   BOTÓN PREGUNTA
+========================================== */
+
+.pregunta button {
+
+  width: 100%;
+
+  padding: 18px 20px;
+
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+}
+
+
+.pregunta button:hover {
+
+  background: #202020;
+
+}
+
+
+.pregunta-flecha {
+
+  color: #ff3b3b;
+
+  font-size: 13px;
+
+}
+
+
+/* ==========================================
+   RESPUESTA
+========================================== */
+
+.respuesta {
+
+  padding: 0 20px 20px;
+
+  color: #aaa;
+
+  line-height: 1.6;
+
+  font-size: 15px;
+
+}
+
+
+/* ==========================================
+   ATENCIÓN AL USUARIO
+========================================== */
+
+.informacion-atencion {
+
+  max-width: 900px;
+
+  margin: 60px auto 0;
+
+  padding: 30px;
+
+  background: #171717;
+
+  border: 1px solid #2d2d2d;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+}
+
+
+.informacion-atencion h2 {
+
+  margin: 0 0 10px;
+
+  font-size: 23px;
+
+}
+
+
+.informacion-atencion p {
+
+  margin: 0;
+
+  color: #aaa;
+
+  line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   BOTÓN WHATSAPP
+========================================== */
+
+.informacion-whatsapp {
+
+  background: #25D366;
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 13px 20px;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.3s;
+
+}
+
+
+.informacion-whatsapp:hover {
+
+  background: #1ebd5a;
+
+  transform: scale(1.04);
+
+}
+
+
+/* ==========================================
+   CORREO
+========================================== */
+
+.informacion-correo {
+
+  text-align: center;
+
+  margin: 40px auto 0;
+
+}
+
+
+.informacion-correo h2 {
+
+  font-size: 20px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.informacion-correo a {
+
+  color: #ff4a4a;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+
+.informacion-correo a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+  .informacion-tarjetas {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+  .informacion {
+
+    padding: 40px 15px;
+
+  }
+
+
+  .informacion-header {
+
+    margin-bottom: 35px;
+
+  }
+
+
+  .informacion-header h1 {
+
+    font-size: 32px;
+
+  }
+
+
+  .informacion-header p {
+
+    font-size: 16px;
+
+  }
+
+
+  .informacion-tarjetas {
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+  }
+
+
+  .informacion-card {
+
+    padding: 25px 20px;
+
+  }
+
+
+  .preguntas-frecuentes {
+
+    margin-top: 45px;
+
+  }
+
+
+  .preguntas-frecuentes h2 {
+
+    font-size: 26px;
+
+  }
+
+
+  .pregunta button {
+
+    padding: 16px;
+
+    font-size: 15px;
+
+  }
+
+
+  .respuesta {
+
+    padding: 0 16px 16px;
+
+  }
+
+
+  .informacion-atencion {
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+  }
+
+
+  .informacion-whatsapp {
+
+    width: 100%;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+  }
+
+}

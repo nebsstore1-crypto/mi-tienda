@@ -1,0 +1,271 @@
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    position: relative;
+
+    width: 100%;
+
+    height: clamp(550px, 82vh, 760px);
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #4f4747;
+
+}
+
+/* ==========================================
+   IMAGEN DE FONDO
+========================================== */
+
+.hero-banner{
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: .75;
+
+}
+
+/* ==========================================
+   CAPA OSCURA
+========================================== */
+
+.hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.20)
+    );
+
+    z-index: 1;
+
+}
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 1400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 0 20px;
+
+}
+
+/* ==========================================
+   CARRUSEL
+========================================== */
+
+.hero-carousel {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* ==========================================
+   BOTÓN
+========================================== */
+
+.btn-primary{
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: #E53935;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+.btn-primary:hover{
+
+    background: #1d1b1b;
+
+    transform: scale(1.05);
+
+}
+
+/* ==========================================
+   PANTALLAS GRANDES
+========================================== */
+
+@media (min-width:1600px){
+
+.hero{
+
+    height: 85vh;
+
+}
+
+.hero-content{
+
+    gap: 60px;
+
+}
+
+}
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media (max-width:1200px){
+
+.hero{
+
+    height: 80vh;
+
+}
+
+.hero-content{
+
+    gap: 40px;
+
+    padding: 0 20px;
+
+}
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:992px){
+
+.hero{
+
+    height: 75vh;
+
+}
+
+.hero-content{
+
+    gap: 40px;
+
+    padding: 0 20px;
+
+}
+
+.btn-primary{
+
+    font-size: 17px;
+
+    padding: 14px 34px;
+
+}
+
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width:768px){
+
+.hero{
+
+    height: 70vh;
+
+    min-height: 480px;
+
+}
+
+.hero-content{
+
+    gap: 40px;
+
+    padding: 0 15px;
+
+}
+
+.btn-primary{
+
+    font-size: 16px;
+
+    padding: 12px 28px;
+
+}
+
+}
+
+/* ==========================================
+   CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width:480px){
+
+.hero{
+
+    height: 65vh;
+
+    min-height: 420px;
+
+}
+
+.btn-primary{
+
+    width: 90%;
+
+    text-align: center;
+
+}
+
+}

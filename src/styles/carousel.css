@@ -1,0 +1,867 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN FUTURISTA
+========================================== */
+
+:root {
+
+    --color-rojo: #FF2A5F;
+    --color-rojo-glow: rgba(255, 42, 95, 0.65);
+
+    --color-azul: #00F0FF;
+    --color-azul-glow: rgba(0, 240, 255, 0.55);
+
+    --color-verde: #00FF88;
+    --color-verde-glow: rgba(0, 255, 136, 0.55);
+
+    --color-holo-border: rgba(255, 255, 255, 0.22);
+
+    --color-bg-card: rgba(10, 14, 26, 0.85);
+
+    --transition-smooth:
+        all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ==========================================
+   CARRUSEL PRINCIPAL
+========================================== */
+
+.carousel {
+
+    position: relative;
+
+    width: 90vw;
+
+    max-width: 1200px;
+
+    height: clamp(380px, 55vh, 550px);
+
+    margin: 30px auto 120px auto;
+
+    perspective: 1200px;
+
+    overflow: visible;
+
+}
+
+
+/* ==========================================
+   ESCENARIO 3D
+========================================== */
+
+.carousel-escenario {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* ==========================================
+   TARJETAS HOLOGRÁFICAS
+========================================== */
+
+.carousel-card {
+
+    position: absolute;
+
+    top: 55%;
+
+    left: 50%;
+
+    width:350px;
+
+    height:450px;
+
+    transform-style: preserve-3d;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: var(--color-bg-card);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid var(--color-holo-border);
+
+    box-shadow:
+
+        0 25px 50px rgba(0, 0, 0, 0.7),
+
+        inset 0 0 20px
+        rgba(0, 240, 255, 0.05);
+
+    transition: var(--transition-smooth);
+
+}
+
+
+/* ==========================================
+   LÍNEA SUPERIOR TRICOLOR
+========================================== */
+
+.carousel-card::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--color-azul),
+            var(--color-rojo),
+            
+        );
+
+    opacity: 0.85;
+
+    z-index: 5;
+
+}
+
+
+/* ==========================================
+   IMAGEN
+========================================== */
+
+.carousel-img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    transform: scale(0.95);
+
+    transition:
+        transform 0.6s ease;
+
+}
+
+
+/* ==========================================
+   EFECTO AL PASAR EL RATÓN
+========================================== */
+
+.carousel-card:hover .carousel-img {
+
+    transform: scale(1.02);
+
+}
+
+
+/* ==========================================
+   IMAGEN CENTRAL
+   FOCO PRINCIPAL
+========================================== */
+
+.posicion-central {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        translateX(0)
+
+        rotateY(0deg)
+
+        rotateZ(0deg)
+
+        scale(1.05);
+
+    opacity: 1;
+
+    z-index: 10;
+
+    filter:
+        brightness(1.15)
+        saturate(1.1);
+
+    box-shadow:
+
+        0 30px 60px
+        rgba(0, 0, 0, 0.8),
+
+        0 0 40px
+        var(--color-rojo-glow),
+
+        0 0 15px
+        var(--color-azul-glow),
+
+        inset 0 0 15px
+        rgba(255, 42, 95, 0.2);
+
+    border-color:
+        rgba(255, 42, 95, 0.6);
+
+}
+
+
+/* ==========================================
+   IMAGEN IZQUIERDA
+========================================== */
+
+.posicion-izquierda {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        translateX(-235px)
+
+        rotateY(20deg)
+
+        rotateZ(-4deg)
+
+        scale(0.80);
+
+    opacity: 0.85;
+
+    z-index: 7;
+
+    filter:
+
+        brightness(0.75)
+
+        saturate(0.9);
+
+    box-shadow:
+
+        0 0 25px
+        var(--color-azul-glow);
+
+    border-color:
+
+        rgba(0, 240, 255, 0.4);
+
+}
+
+
+/* ==========================================
+   IMAGEN DERECHA
+========================================== */
+
+.posicion-derecha {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        translateX(235px)
+
+        rotateY(-20deg)
+
+        rotateZ(4deg)
+
+        scale(0.80);
+
+    opacity: 0.85;
+
+    z-index: 7;
+
+    filter:
+
+        brightness(0.75)
+
+        saturate(0.9);
+
+    box-shadow:
+
+        0 0 25px
+        var(--color-verde-glow);
+
+    border-color:
+
+        rgba(0, 255, 136, 0.4);
+
+}
+
+
+/* ==========================================
+   SEGUNDA IMAGEN IZQUIERDA
+========================================== */
+
+.posicion-izquierda-2 {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        translateX(-410px)
+
+        rotateY(32deg)
+
+        rotateZ(-7deg)
+
+        scale(0.60);
+
+    opacity: 0.35;
+
+    z-index: 4;
+
+    filter:
+
+        brightness(0.4)
+
+        saturate(0.6);
+
+}
+
+
+/* ==========================================
+   SEGUNDA IMAGEN DERECHA
+========================================== */
+
+.posicion-derecha-2 {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        translateX(410px)
+
+        rotateY(-32deg)
+
+        rotateZ(7deg)
+
+        scale(0.60);
+
+    opacity: 0.35;
+
+    z-index: 4;
+
+    filter:
+
+        brightness(0.4)
+
+        saturate(0.6);
+
+}
+
+
+/* ==========================================
+   IMÁGENES OCULTAS
+========================================== */
+
+.posicion-oculta {
+
+    transform:
+
+        translate(-50%, -50%)
+
+        scale(0.3);
+
+    opacity: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================
+   INDICADORES
+========================================== */
+
+.carousel-dots {
+
+    position: absolute;
+
+    bottom: -90px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    z-index: 100;
+
+    background:
+
+        rgba(10, 14, 26, 0.85);
+
+    padding: 10px 20px;
+
+    border-radius: 40px;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(0, 0, 0, 0.8);
+
+}
+
+
+/* ==========================================
+   PUNTOS
+========================================== */
+
+.dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(255, 255, 255, 0.3);
+
+    cursor: pointer;
+
+    transition:
+
+        all 0.4s
+        cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+
+/* ==========================================
+   PUNTO AL PASAR EL RATÓN
+========================================== */
+
+.dot:hover {
+
+    background:
+        var(--color-azul);
+
+    box-shadow:
+
+        0 0 10px
+        var(--color-azul-glow);
+
+}
+
+
+/* ==========================================
+   PUNTO ACTIVO
+========================================== */
+
+.active-dot {
+
+    width: 30px;
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--color-azul),
+            var(--color-rojo),
+            var(--color-verde)
+        );
+
+    box-shadow:
+
+        0 0 15px
+        var(--color-rojo-glow);
+
+}
+
+
+/* ==========================================
+   BOTÓN EXPLORAR CATÁLOGO
+========================================== */
+
+.btn-primary {
+
+    background-color:
+        var(--color-rojo);
+
+    color: white;
+
+    padding:
+        12px 28px;
+
+    border-radius:
+        25px;
+
+    border: none;
+
+    font-size:
+        16px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    box-shadow:
+
+        0 4px 15px
+        var(--color-rojo-glow);
+
+    transition:
+        all 0.3s ease;
+
+    position:
+        relative;
+
+    top:
+        -60px;
+
+}
+
+
+.btn-primary:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+
+        0 8px 25px
+        var(--color-rojo-glow);
+
+}
+
+
+/* ==========================================
+   CARGANDO
+========================================== */
+
+.carousel-loading {
+
+    width: 100%;
+
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        var(--color-azul);
+
+    font-family:
+        monospace;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .carousel {
+
+        width: 94vw;
+
+        height: 450px;
+
+        margin-bottom: 100px;
+
+    }
+
+
+    .carousel-card {
+
+        width: 290px;
+
+        height: 330px;
+
+    }
+
+
+    .posicion-central {
+
+        scale: 1.03;
+
+    }
+
+
+    .posicion-izquierda {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(-195px)
+
+            rotateY(18deg)
+
+            rotateZ(-4deg)
+
+            scale(0.75);
+
+    }
+
+
+    .posicion-derecha {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(195px)
+
+            rotateY(-18deg)
+
+            rotateZ(4deg)
+
+            scale(0.75);
+
+    }
+
+
+    .posicion-izquierda-2 {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(-320px)
+
+            rotateY(26deg)
+
+            rotateZ(-6deg)
+
+            scale(0.55);
+
+    }
+
+
+    .posicion-derecha-2 {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(320px)
+
+            rotateY(-26deg)
+
+            rotateZ(6deg)
+
+            scale(0.55);
+
+    }
+
+
+    .carousel-dots {
+
+        bottom:
+            -65px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 768px) {
+
+    .carousel {
+
+        width: 96vw;
+
+        height: 350px;
+
+        margin-bottom: 90px;
+
+        perspective: 900px;
+
+    }
+
+
+    .carousel-card {
+
+        width: 245px;
+
+        height: 285px;
+
+    }
+
+
+    .posicion-central {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            scale(1.03);
+
+    }
+
+
+    .posicion-izquierda {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(-120px)
+
+            rotateY(18deg)
+
+            rotateZ(-5deg)
+
+            scale(0.70);
+
+        opacity:
+            0.65;
+
+    }
+
+
+    .posicion-derecha {
+
+        transform:
+
+            translate(-50%, -50%)
+
+            translateX(120px)
+
+            rotateY(-18deg)
+
+            rotateZ(5deg)
+
+            scale(0.70);
+
+        opacity:
+            0.65;
+
+    }
+
+
+    .posicion-izquierda-2,
+    .posicion-derecha-2 {
+
+        opacity:
+            0;
+
+    }
+
+
+    .carousel-dots {
+
+        bottom:
+            -55px;
+    }
+    .btn-primary {
+        top:
+            -40px;
+    }
+}
+/* ==========================================
+   CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width: 480px) {
+    .carousel {
+        height:
+            300px;
+        margin-bottom:
+            80px;
+    }
+    .carousel-card {
+        width:
+            200px;
+        height:
+            240px;
+    }
+    .posicion-central {
+        transform:
+            translate(-50%, -50%)
+            scale(1.02);
+    }
+    .posicion-izquierda {
+        transform:
+            translate(-50%, -50%)
+            translateX(-85px)
+            rotateY(18deg)
+            rotateZ(-5deg)
+            scale(0.64);
+        opacity:
+            0.45;
+    }
+    .posicion-derecha {
+        transform:
+            translate(-50%, -50%)
+            translateX(85px)
+            rotateY(-18deg)
+            rotateZ(5deg)
+            scale(0.64);
+        opacity:
+            0.45;
+    }
+    .carousel-dots {
+        bottom:
+            -45px;
+
+    }
+}

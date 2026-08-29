@@ -1,0 +1,193 @@
+/* ==========================================
+   BOTÓN FLOTANTE DE WHATSAPP (ESTILO PRO)
+========================================== */
+
+.whatsapp-flotante {
+
+  /* ========================================
+     POSICIÓN DEL BOTÓN
+     
+     🔴 CAMBIA ESTOS VALORES A TU GUSTO:
+     
+     - right: distancia desde la derecha
+       (si quieres moverlo a la izquierda, puedes 
+       borrar 'right' y usar 'left: 20px;')
+     - bottom: distancia desde abajo (más arriba o más abajo)
+  ======================================== */
+
+  position: fixed;
+
+  /* 🔴 DISTANCIA DESDE LA DERECHA */
+  right: 10px;
+
+  /* 🔴 DISTANCIA DESDE ABAJO (Sube o baja el número para cambiar la altura) */
+  bottom: 40px;
+
+
+  /* ========================================
+     TAMAÑO
+  ======================================== */
+
+  width: 60px;
+  height: 60px;
+
+
+  /* ========================================
+     COLOR (DEGRADADO MODERNO)
+  ======================================== */
+
+  background: linear-gradient(135deg, #25D366, #128C7E);
+
+  color: #FFFFFF;
+
+
+  /* ========================================
+     FORMA REDONDA
+  ======================================== */
+
+  border-radius: 50%;
+
+
+  /* ========================================
+     CENTRAR EL ÍCONO
+  ======================================== */
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+  /* ========================================
+     QUITAR SUBRAYADO
+  ======================================== */
+
+  text-decoration: none;
+
+
+  /* ========================================
+     TAMAÑO DEL ÍCONO
+  ======================================== */
+
+  font-size: 34px;
+
+
+  /* ========================================
+     SOMBRA BASE
+  ======================================== */
+
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+
+
+  /* ========================================
+     SIEMPRE ENCIMA DE LA PÁGINA
+  ======================================== */
+
+  z-index: 99999;
+
+
+  /* ========================================
+     ANIMACIÓN
+  ======================================== */
+
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  animation: pulse-whatsapp 2.5s infinite;
+
+}
+
+
+/* ==========================================
+   EFECTO AL PASAR EL MOUSE (HOVER)
+========================================== */
+
+.whatsapp-flotante:hover {
+
+  background: linear-gradient(135deg, #2eba5c, #0e7064);
+
+  transform: scale(1.12) rotate(5deg);
+
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+
+  color: #FFFFFF;
+
+}
+
+
+/* ==========================================
+   ÍCONO DE WHATSAPP
+========================================== */
+
+.whatsapp-flotante i {
+
+  font-size: 34px;
+
+  transition: transform 0.3s ease;
+
+}
+
+
+/* ==========================================
+   ANIMACIÓN DE PULSO LARGO Y EXPANSIVO
+========================================== */
+
+@keyframes pulse-whatsapp {
+
+  0% {
+
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+
+  }
+
+  70% {
+
+    box-shadow: 0 0 0 30px rgba(37, 211, 102, 0);
+
+  }
+
+  100% {
+
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+
+  }
+
+}
+
+
+/* ==========================================
+   WHATSAPP EN CELULAR
+========================================== */
+
+@media (max-width: 768px) {
+
+  .whatsapp-flotante {
+
+    width: 54px;
+
+    height: 54px;
+
+
+    /* ========================================
+       🔴 POSICIÓN EN CELULAR
+    ======================================== */
+
+    /* Distancia desde la derecha en móvil */
+    right: 15px;
+
+    /* Distancia desde abajo en móvil (súbelo o bájalo aquí también) */
+    bottom: 20px;
+
+
+    font-size: 28px;
+
+  }
+
+
+  .whatsapp-flotante i {
+
+    font-size: 28px;
+
+  }
+
+}
