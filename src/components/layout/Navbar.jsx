@@ -1,11 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
 function Navbar() {
 
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [categoriasAbiertas, setCategoriasAbiertas] = useState(false);
+
+  // ==========================================
+  // RUTA ACTUAL
+  // ==========================================
+
+  const location = useLocation();
+
+  // Saber si estamos en Inicio
+  const estaEnInicio = location.pathname === "/";
+
 
   // ==========================================
   // CERRAR MENÚ
@@ -17,6 +27,7 @@ function Navbar() {
     setCategoriasAbiertas(false);
 
   }
+
 
   // ==========================================
   // ABRIR / CERRAR CATEGORÍAS
@@ -31,6 +42,7 @@ function Navbar() {
     );
 
   }
+
 
   return (
 
@@ -113,6 +125,24 @@ function Navbar() {
 
 
           {/* =================================
+              CATÁLOGO
+              
+              NO SE MUESTRA EN INICIO
+          ================================= */}
+
+          {!estaEnInicio && (
+
+            <Link
+              to="/catalogo"
+              onClick={cerrarMenu}
+            >
+              Catálogo
+            </Link>
+
+          )}
+
+
+          {/* =================================
               CATEGORÍAS
           ================================= */}
 
@@ -124,39 +154,47 @@ function Navbar() {
             }`}
           >
 
-          <div className="categoria-boton">
-
-  {/* CATEGORÍAS → página general */}
-  <Link
-    to="/categorias"
-    className="dropbtn"
-    onClick={cerrarMenu}
-  >
-    Categorías
-  </Link>
-
-  {/* FLECHA → abre el desplegable */}
-  <button
-    type="button"
-    className="flecha-btn"
-    onClick={toggleCategorias}
-    aria-label="Mostrar categorías"
-  >
-    <span
-      className={
-        categoriasAbiertas
-          ? "flecha girada"
-          : "flecha"
-      }
-    >
-      ▼
-    </span>
-  </button>
-
-</div>
+            <div className="categoria-boton">
 
 
-            {/* SUBMENÚ */}
+              {/* CATEGORÍAS → PÁGINA GENERAL */}
+
+              <Link
+                to="/categorias"
+                className="dropbtn"
+                onClick={cerrarMenu}
+              >
+                Categorías
+              </Link>
+
+
+              {/* FLECHA → ABRE DESPLEGABLE */}
+
+              <button
+                type="button"
+                className="flecha-btn"
+                onClick={toggleCategorias}
+                aria-label="Mostrar categorías"
+              >
+
+                <span
+                  className={
+                    categoriasAbiertas
+                      ? "flecha girada"
+                      : "flecha"
+                  }
+                >
+                  ▼
+                </span>
+
+              </button>
+
+            </div>
+
+
+            {/* =================================
+                SUBMENÚ
+            ================================= */}
 
             <div className="dropdown-content">
 
@@ -164,7 +202,7 @@ function Navbar() {
                 to="/hombre"
                 onClick={cerrarMenu}
               >
-                 Hombre
+                Hombre
               </Link>
 
               <Link
@@ -178,7 +216,7 @@ function Navbar() {
                 to="/nino"
                 onClick={cerrarMenu}
               >
-                 Niño
+                Niño
               </Link>
 
             </div>
@@ -199,7 +237,7 @@ function Navbar() {
 
 
           {/* =================================
-              CONTACTO
+              INFORMACIÓN
           ================================= */}
 
           <Link
@@ -224,7 +262,6 @@ function Navbar() {
 
 
         </nav>
-
 
 
         {/* =====================================
